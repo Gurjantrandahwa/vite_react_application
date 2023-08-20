@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import {DataGrid} from '@mui/x-data-grid';
 import {Box, Button, Container, Typography} from "@mui/material";
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
+import {ArrowBack} from "@mui/icons-material";
 
 interface Post {
     id: number;
@@ -12,6 +13,7 @@ interface Post {
 const Posts = () => {
     const [postData, setPostData] = useState<Post[]>([]);
     const navigate = useNavigate();
+
     useEffect(() => {
         fetch('https://jsonplaceholder.typicode.com/posts')
             .then((response) => response.json())
@@ -32,23 +34,35 @@ const Posts = () => {
             marginTop: "30px"
         }}
     >
-        <Box>
+        <Box
+            sx={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems:"center"
+            }}
+        >
             <Button
-            variant={"outlined"}
-            onClick={()=>navigate(-1)}
-            >Back
-            </Button>
-            <Typography variant="h4"
-                        textAlign={"center"}
-                        marginBottom={"30px"}
-                        color={"secondary"}
-                        fontWeight={"bold"}
+                variant={"outlined"}
+                onClick={() => navigate(-1)}
             >
-                Posts
-            </Typography>
+                <ArrowBack sx={{marginRight: "5px"}}/> Back
+            </Button>
 
+            <Button variant={"contained"}>
+                <Link to={"/departments"}>
+                    Departments
+                </Link>
+
+            </Button>
         </Box>
-
+        <Typography variant="h4"
+                    textAlign={"center"}
+                    marginBottom={"30px"}
+                    color={"secondary"}
+                    fontWeight={"bold"}
+        >
+            Posts
+        </Typography>
         <DataGrid rows={postData} columns={columns} pageSize={5}/>
     </Container>
 };

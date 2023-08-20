@@ -2,8 +2,8 @@ import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 
 import {Container} from "@mui/material";
 import Homepage from "./Pages/Homepage";
-import Posts from "./components/Posts/Posts";
-import Departments from "./components/Departments/Departments";
+import Posts from "./Pages/Posts";
+import Departments from "./Pages/Departments";
 
 const App = () => {
 
