@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import {useEffect, useState} from 'react';
 import {DataGrid} from '@mui/x-data-grid';
 import {Box, Button, Container, Typography} from "@mui/material";
 import {Link, useNavigate} from "react-router-dom";
