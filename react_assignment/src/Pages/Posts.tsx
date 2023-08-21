@@ -63,7 +63,7 @@ const Posts = () => {
         >
             Posts
         </Typography>
-        <DataGrid rows={postData} columns={columns} pageSize={5 as any}/>
+        <DataGrid rows={postData} columns={columns}/>
     </Container>
 };
 
