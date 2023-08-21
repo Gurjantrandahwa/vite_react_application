@@ -27,7 +27,6 @@ const Posts = () => {
     ];
 
     return <Container
-
         sx={{
             height: 400,
             width: '100%',
@@ -38,7 +37,7 @@ const Posts = () => {
             sx={{
                 display: "flex",
                 justifyContent: "space-between",
-                alignItems:"center"
+                alignItems: "center"
             }}
         >
             <Button
@@ -52,14 +51,14 @@ const Posts = () => {
                 <Link to={"/departments"}>
                     Departments
                 </Link>
-
             </Button>
         </Box>
-        <Typography variant="h4"
-                    textAlign={"center"}
-                    marginBottom={"30px"}
-                    color={"secondary"}
-                    fontWeight={"bold"}
+        <Typography
+            variant="h4"
+            textAlign={"center"}
+            marginBottom={"30px"}
+            color={"secondary"}
+            fontWeight={"bold"}
         >
             Posts
         </Typography>
